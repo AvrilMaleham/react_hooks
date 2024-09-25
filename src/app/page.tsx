@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Link className="hover:font-bold" href="/useEffect">useEffect</Link>
-        <Link className="hover:font-bold" href="/useRef">useRef</Link>
-        <Link className="hover:font-bold" href="/useReducer">useReducer</Link>
-        <Link className="hover:font-bold" href="/useCustom">useCustom</Link>
-      </main>
+    <div className="flex text-2xl flex-col items-center justify-center h-screen font-[family-name:var(--font-geist-sans)]">
+      <div className="flex flex-col text-left">
+        <Link className="hover:font-bold m-5" href="/useEffect">useEffect</Link>
+        <Link className="hover:font-bold m-5" href="/useRef">useRef</Link>
+        <Link className="hover:font-bold m-5" href="/useReducer">useReducer</Link>
+        <Link className="hover:font-bold m-5" href="/useCustom">useCustom</Link>
+        </div>
     </div>
   );
 }
