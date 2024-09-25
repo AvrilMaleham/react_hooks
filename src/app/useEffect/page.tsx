@@ -26,7 +26,7 @@ export default function useEffectDemo() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen font-[family-name:var(--font-geist-sans)]">
-      <h1 className="text-4xl font-bold m-5">useEffectDemo</h1>
+      <h1 className="text-4xl font-bold m-5">useEffect Demo</h1>
 
       <h3 className="text-2xl font-bold m-4">Bitcoin Exchange Rate</h3>
       <label className="text-xl font-bold m-3">
