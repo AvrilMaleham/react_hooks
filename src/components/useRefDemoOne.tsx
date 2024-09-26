@@ -23,11 +23,27 @@ export default function UseRefDemoOne() {
   return (
     <div className="flex flex-col items-center justify-center">
       <h2 className="text-2xl font-bold m-4">Ref vs State vs Variable Demo</h2>
-      <button onClick={handleClick}>REF COUNTER: Click me!</button> Ref:{" "}
-      {countRef.current} Var: {count} <br />
-      <button onClick={() => setCountState(countState + 1)}>
-        STATE COUNTER: Click me to update!
-      </button>{" "}
+      <div>
+        REF COUNTER:{" "}
+        <button
+          className="text-blue-500 font-bold hover:text-blue-600"
+          onClick={handleClick}
+        >
+          {" "}
+          Click me!
+        </button>
+      </div>
+      Ref: {countRef.current} Var: {count} <br />
+      <div>
+        {" "}
+        STATE COUNTER:{" "}
+        <button
+          className="text-blue-500 font-bold hover:text-blue-600"
+          onClick={() => setCountState(countState + 1)}
+        >
+          Click me to update!
+        </button>
+      </div>
       State: {countState}
     </div>
   );

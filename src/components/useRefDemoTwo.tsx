@@ -19,7 +19,7 @@ export default function UseRefDemoTwo() {
   return (
     <div className="flex flex-col items-center justify-center mb-10">
          <h2 className="text-2xl font-bold m-4">Realistic Use of useRef Demo</h2>
-      <button onClick={handleClick}> {isPlaying ? "Pause" : "Play"} </button>
+      <button  className="text-blue-500 font-bold hover:text-blue-600" onClick={handleClick}> {isPlaying ? "Pause" : "Play"} </button>
       {/* 2. Initialise the ref */}
       <video ref={videoRef} width="250">
         <source
