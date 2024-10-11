@@ -1,9 +1,11 @@
+import { type ActionOne, type ActionTwo, type State } from "@/types/useReducerTypes";
+
 // reducer function - can be called anything
 // takes two arguments: the current state, and the action to be taken
 // action is passed via dispatch, state is stored in component
-type Action = { type: string};
 
-export const reducer = (state: number, action: Action): number => {
+
+export const reducerOne = (state: number, action: ActionOne): number => {
   switch (
     action.type // switch statements are common in reducers
   ) {
@@ -20,3 +22,18 @@ export const reducer = (state: number, action: Action): number => {
   }
 };
 // reducer function returns the new value of state after taking action
+
+
+// reducer function for axios fetch response
+// called from dispatch when state is updated, lets us handle different actions
+// return object should match same structure as initial state passed to useReducer
+export const reducerTwo = (postsResult: State, action: ActionTwo) => {
+  switch (action.type) {
+    case "FETCH_SUCCESS":
+      return { loading: false, posts: action.payload, error: "" };
+    case "FETCH_ERROR":
+      return { loading: false, posts: [], error: action.payload };
+    default:
+      return { ...postsResult, loading: false };
+  }
+}

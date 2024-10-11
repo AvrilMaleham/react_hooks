@@ -1,10 +1,10 @@
 import { useReducer } from "react";
-import { reducer } from "@/utils/reducer";
+import { reducerOne } from "@/utils/reducer";
 
 export default function UseReducerDemoOne() {
   // useReducer takes a reducer function and the initial state value
   // returns array with the state variable and a dispatch function
-  const [counter, dispatch] = useReducer(reducer, 0);
+  const [counter, dispatch] = useReducer(reducerOne, 0);
   const handleIncrement = () => {
     // we call the dispatch function to make all state updates
     dispatch({ type: "increment" });
