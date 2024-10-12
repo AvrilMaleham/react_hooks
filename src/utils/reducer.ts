@@ -1,4 +1,5 @@
 import { type ActionOne, type ActionTwo, type State } from "@/types/useReducerTypes";
+import { type BitcoinResponseAction, type BitcoinState } from "@/types/useEffectTypes";
 
 // reducer function - can be called anything
 // takes two arguments: the current state, and the action to be taken
@@ -35,5 +36,16 @@ export const reducerTwo = (postsResult: State, action: ActionTwo) => {
       return { loading: false, posts: [], error: action.payload };
     default:
       return { ...postsResult, loading: false };
+  }
+}
+
+export const bitcoinAPIResponseReducer = (bitcoinResult: BitcoinState, action: BitcoinResponseAction) => {
+  switch (action.type) {
+    case "FETCH_SUCCESS":
+      return { loading: false, value: action.payload, error: "" };
+    case "FETCH_ERROR":
+      return { loading: false, value: {}, error: action.payload };
+    default:
+      return { ...bitcoinResult, loading: false };
   }
 }

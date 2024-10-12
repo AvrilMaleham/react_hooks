@@ -6,11 +6,11 @@ export default function useEffectDemoOne() {
 
   const [currency, setCurrency] = useState(currencies[0]);
 
-  const data = useBitcoinData(
+  const { loading, value, error } = useBitcoinData(
     `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`
   );
 
-  const value = data ? data : "Error";
+  const displayValue = loading ? "Loading..." : error ? "Error" : Object.values(value)[0];
 
   const options = currencies.map((curr) => (
     <option value={curr} key={curr}>
@@ -32,7 +32,7 @@ export default function useEffectDemoOne() {
         </select>
       </label>
       <p className="font-bold mb-10">
-        1 BTC is worth {Object.values(value)[0]} {currency}
+        1 BTC is worth {displayValue} {currency}
       </p>
     </div>
   );
