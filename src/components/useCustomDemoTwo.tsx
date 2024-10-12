@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useData } from "../hooks/useData";
+import { useNumberFactData } from "../hooks/useNumberFactData";
 
 export default function UseCustomDemoTwo() {
   // Fetches a random number fact
@@ -7,7 +7,7 @@ export default function UseCustomDemoTwo() {
   const [number, setNumber] = useState(1);
 
   // uses custom hook to handle the effect for loading external data
-  const data = useData(`http://numbersapi.com/${number}`);
+  const data = useNumberFactData(`http://numbersapi.com/${number}`);
 
   // get the fact or show error message if failed
   const fact = data ? data : "Error";
